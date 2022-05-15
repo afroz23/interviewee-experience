@@ -86,14 +86,15 @@ export const likePost = async (req, res) => {
     return res.status(404).send(`No post with id: ${id}`);
 
   const post = await PostMessage.findById(id);
+  if (post) {
+    const updatedPost = await PostMessage.findByIdAndUpdate(
+      id,
+      { likeCount: post.likeCount + 1 },
+      { new: true }
+    );
 
-  const updatedPost = await PostMessage.findByIdAndUpdate(
-    id,
-    { likeCount: post.likeCount + 1 },
-    { new: true }
-  );
-
-  res.json(updatedPost);
+    res.json(updatedPost);
+  }
 };
 
 export default router;
