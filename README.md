@@ -44,4 +44,5 @@ Using React.js, Node.js, Express.js, MongoDB, and Redux to build a Full Stack Ap
 
 ## Deployment
 
-> You can test it [here]()
+> Frontend [here](https://interviewee-experience.vercel.app/)
+> Server [here](https://interviewee-exp.herokuapp.com/posts)
